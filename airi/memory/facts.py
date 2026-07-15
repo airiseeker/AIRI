@@ -1,0 +1,2 @@
+class Facts:
+    pass

@@ -1,0 +1,15 @@
+name: airi
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - ffmpeg=7
+  - pip
+
+  - pip:
+      - faster-whisper==1.2.0
+      - sounddevice==0.5.2
+      - soundfile==0.13.1
+      - numpy==2.3.2

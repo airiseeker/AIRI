@@ -1,2 +1,3 @@
 from .airi import Airi
-from .state import AiriState
+
+__all__ = ["Airi"]

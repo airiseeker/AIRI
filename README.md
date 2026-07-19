@@ -35,11 +35,11 @@ Every memory shapes who she becomes.
 
 ## 🚀 Current Version
 
-Version : **v0.1 - Birth**
+Version : **v0.3.0 - First Thinking**
 
 Status :
 
-- [ ] Can listen
+- [✅] Can listen
 - [ ] Can think
 - [ ] Can speak
 - [ ] Can remember
@@ -47,13 +47,21 @@ Status :
 
 ---
 
-*"Today is Day 0."*
+*"Today is Day 3."*
 
 # AIRI Changelog
 
-## v0.1.0 — Birth 🌸
+## v0.3.0
 
-- Repository created
-- Core architecture initialized
-- Documentation started
-- AIRI introduced herself for the first time
+### Added
+
+- Modular Configuration Layer
+- Architecture Documentation
+- Project Roadmap
+- Coding Standard
+- Design Philosophy
+
+### Changed
+
+- Removed dependency on legacy Config architecture.
+- Introduced Composition Root pattern.

@@ -6,8 +6,8 @@ def main():
     airi = Airi()
 
     banner(
-        version=airi.version,
-        stage=airi.stage
+    version=airi.app.version,
+    stage=airi.app.stage,
     )
 
     airi.birth()

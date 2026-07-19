@@ -1,29 +1,45 @@
+from airi.app import App
+from airi.brain import Brain, DummyLLM
 from airi.memory import MemoryManager
-from airi.utils.config import Config
-
+from airi.personality import Personality
+from airi.prompts import Prompts
+from airi.relationship import Relationship
+from airi.settings import Settings
 from airi.stt.listener import Listener
-from airi.brain.brain import Brain
-
 
 class Airi:
     def __init__(self):
-        # Configuration
-        self.config = Config()
 
-        self.name = self.config.personality["name"]
-        self.version = self.config.personality["version"]
-        self.stage = self.config.personality["stage"]
+        # Application
+        self.app = App.load()
 
-        # Core modules
+        # Identity
+        self.personality = Personality.load()
+        self.relationship = Relationship.load()
+
+        # Prompts
+        self.prompts = Prompts.load()
+
+        # Settings
+        self.settings = Settings.load()
+
+        # AI Engine
+        self.llm = DummyLLM()
+
+        # Core Modules
         self.memory = MemoryManager()
         self.listener = Listener()
-        self.brain = Brain()
+
+        # Brain
+        self.brain = Brain(
+            personality=self.personality,
+            relationship=self.relationship,
+            llm=self.llm,
+        )
 
     def introduce(self):
-        print(f"🌸 {self.config.prompts['greeting']}")
-        print(f"Namaku {self.name}.")
-        print(f"Versiku {self.version}.")
-        print(f"Saat ini aku berada di tahap {self.stage}.")
+        print(f"🌸 {self.prompts.greeting}")
+        print(f"Namaku {self.personality.name}.")
         print("Semoga kita bisa tumbuh bersama. 💙")
 
     def birth(self):
